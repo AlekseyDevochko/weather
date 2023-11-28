@@ -9,11 +9,7 @@ import java.util.Map;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "text",
-        "icon",
-        "code"
-})
+@JsonPropertyOrder({"text", "icon", "code"})
 @Generated("jsonschema2pojo")
 public class Condition {
 

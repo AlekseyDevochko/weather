@@ -20,17 +20,17 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 public class ScheduleServiceImpl implements ScheduleService {
 
-    @Autowired
+
     private Parser parser;
 
-    @Autowired
+
     private WeatherService weatherService;
 
-    @Scheduled(fixedRate = 10000)
+
+
+    @Scheduled(fixedRate = 3000)
     @Async
     public void getWeatherFromAPI() {
-
-
         AsyncHttpClient client = new DefaultAsyncHttpClient();
         try {
             Response response = client.prepareGet("https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk")
@@ -41,9 +41,8 @@ public class ScheduleServiceImpl implements ScheduleService {
                     .get();
             WeatherFromAPI weatherFromAPI = parser.parse(response);
             weatherService.create(weatherFromAPI);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (ExecutionException e) {
+            log.info("weather from API have been added");
+        } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         } finally {
             try {
@@ -52,11 +51,15 @@ public class ScheduleServiceImpl implements ScheduleService {
                 throw new RuntimeException(e);
             }
         }
+    }
 
+    @Autowired
+    public void setParser(Parser parser) {
+        this.parser = parser;
+    }
 
-
-
-//        log.info("get weather "+
-//                LocalDateTime.now().toEpochSecond(ZoneOffset.UTC));
+    @Autowired
+    public void setWeatherService(WeatherService weatherService) {
+        this.weatherService = weatherService;
     }
 }

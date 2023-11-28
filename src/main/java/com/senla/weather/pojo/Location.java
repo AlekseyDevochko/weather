@@ -1,13 +1,12 @@
 package com.senla.weather.pojo;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-//import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.*;
 import jakarta.annotation.Generated;
 
 import javax.validation.Valid;
-//import jakarta.validation.Valid;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -36,7 +35,7 @@ public class Location {
     @JsonProperty("tz_id")
     public String tzId;
     @JsonProperty("localtime_epoch")
-    public int localtimeEpoch;
+    public long localtimeEpoch;
     @JsonProperty("localtime")
     public String localtime;
     @JsonIgnore

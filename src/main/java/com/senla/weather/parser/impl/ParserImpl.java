@@ -14,22 +14,27 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class ParserImpl implements Parser {
 
-    @Autowired
+
     private ObjectMapper objectMapper;
     @Override
-    public WeatherFromAPI parse(Response weatherFromAPI) {
+    public WeatherFromAPI parse(Response response) {
 
 
-        WeatherFromAPI weather = null;
+        WeatherFromAPI weatherFromAPI = null;
 
         try {
-            weather = objectMapper.readValue(weatherFromAPI.getResponseBody(), WeatherFromAPI.class);
+            weatherFromAPI = objectMapper.readValue(response.getResponseBody(), WeatherFromAPI.class);
 
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
 
-        log.error("HHh");
-        return weather;
+        log.info("parse json to weatherFromAPI");
+        return weatherFromAPI;
+    }
+
+    @Autowired
+    public void setObjectMapper(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
     }
 }
