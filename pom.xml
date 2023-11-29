@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.senla</groupId>
-	<artifactId>weather</artifactId>
+	<artifactId>weather-srvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>weather</name>
 	<description>Demo project for Spring Boot</description>

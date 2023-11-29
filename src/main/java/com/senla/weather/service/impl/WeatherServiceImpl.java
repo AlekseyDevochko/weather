@@ -1,6 +1,6 @@
 package com.senla.weather.service.impl;
 
-import com.senla.weather.model.AverageTemperature;
+import com.senla.weather.model.Average;
 import com.senla.weather.model.Weather;
 import com.senla.weather.pojo.WeatherFromAPI;
 import com.senla.weather.repo.WeatherRepository;
@@ -13,8 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 //import java.util.Date;
 
 import java.sql.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -47,14 +45,6 @@ public class WeatherServiceImpl implements WeatherService {
         return weatherList;
     }
 
-    @Override
-    public AverageTemperature calculateAverageTemp(List<Weather> weatherList) {
-        AtomicReference<Integer> sum = new AtomicReference<>(0);
-        weatherList.forEach(weather -> sum.updateAndGet(v -> v + weather.getTemperature()));
-        Integer result = sum.get() / weatherList.size();
-        log.info("calculate average temperature");
-        return new AverageTemperature(result);
-    }
 
 
     @Autowired

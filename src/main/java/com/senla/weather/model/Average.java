@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AverageTemperature {
+public class Average {
     private Integer averageTemperature;
+    private Double averageMph;
+    private Integer averagePressure;
+    private Integer averageHumidity;
+    private String averageWeatherCondition;
 }

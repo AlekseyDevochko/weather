@@ -1,8 +1,9 @@
 package com.senla.weather.controller;
 
-import com.senla.weather.model.AverageTemperature;
+import com.senla.weather.model.Average;
 import com.senla.weather.model.RequestWeather;
 import com.senla.weather.model.Weather;
+import com.senla.weather.service.AverageService;
 import com.senla.weather.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +20,24 @@ import java.util.List;
 public class WeatherController {
 
     private WeatherService weatherService;
+    private AverageService averageService;
 
 
 
     @PostMapping("/get-list")
-    public AverageTemperature getWeatherList(@RequestBody @Valid RequestWeather requestWeather){
+    public Average getWeatherList(@RequestBody @Valid RequestWeather requestWeather){
         List<Weather> weatherList = weatherService.getWeatherList(requestWeather.getStartDate(), requestWeather.getEndDate());
-        AverageTemperature result = weatherService.calculateAverageTemp(weatherList);
-        log.info("/get-list");
-        return ResponseEntity.ok(result).getBody();
+        Average average = averageService.getAverage(weatherList);
+        return ResponseEntity.ok(average).getBody();
     }
 
     @Autowired
     public void setWeatherService(WeatherService weatherService) {
         this.weatherService = weatherService;
+    }
+
+    @Autowired
+    public void setAverageService(AverageService averageService) {
+        this.averageService = averageService;
     }
 }
