@@ -6,5 +6,4 @@ import org.asynchttpclient.Response;
 
 public interface Parser {
     WeatherFromAPI parse(Response response) throws JsonProcessingException;
-
 }

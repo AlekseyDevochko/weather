@@ -1,6 +1,7 @@
 package com.senla.weather.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 @ControllerAdvice
+@Slf4j
 public class RestResponseEntityExceptionHandler
         extends ResponseEntityExceptionHandler {
 
@@ -25,6 +27,7 @@ public class RestResponseEntityExceptionHandler
     protected ResponseEntity<Object> handleConflict(
             Exception ex, WebRequest request) {
         String bodyOfResponse = ex.getMessage();
+        log.error(bodyOfResponse);
         return handleExceptionInternal(ex, bodyOfResponse,
                 new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }

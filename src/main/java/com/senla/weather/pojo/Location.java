@@ -7,7 +7,6 @@ import javax.validation.Valid;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "name",

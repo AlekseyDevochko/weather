@@ -6,8 +6,6 @@ import jakarta.annotation.Generated;
 import javax.validation.Valid;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "last_updated_epoch",

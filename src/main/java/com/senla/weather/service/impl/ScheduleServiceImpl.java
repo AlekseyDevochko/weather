@@ -10,6 +10,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -22,29 +23,33 @@ import java.util.concurrent.ExecutionException;
 @RequiredArgsConstructor
 public class ScheduleServiceImpl implements ScheduleService {
 
+    private final Parser parser;
+    private final WeatherService weatherService;
 
-    private Parser parser;
+    @Value("${api-url}")
+    private String url;
+    @Value("${api-key}")
+    private String apiKey;
+    @Value("${api-key-value}")
+    private String apiKeyValue;
+    @Value("${api-host}")
+    private String apiHost;
+    @Value("${api-host-value}")
+    private String apiHostValue;
 
-
-    private WeatherService weatherService;
-
-
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(cron = "*/5 * * * * *")
     @Async
     public void getWeatherFromAPI() throws ExecutionException, InterruptedException, IOException {
         AsyncHttpClient client = new DefaultAsyncHttpClient();
-
-        Response response = client.prepareGet("https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk")
-                .setHeader("X-RapidAPI-Key", "96d0d06362mshd98a51bafdd2f2ep1d7b84jsnb85e41b48c91")
-                .setHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com")
+        Response response = client.prepareGet(url)
+                .setHeader(apiKey, apiKeyValue)
+                .setHeader(apiHost, apiHostValue)
                 .execute()
                 .toCompletableFuture()
                 .get();
         WeatherFromAPI weatherFromAPI = parser.parse(response);
         weatherService.create(weatherFromAPI);
-        log.info("weather from API have been added");
-
-
+        log.info("weather from API has been added");
         client.close();
     }
 }

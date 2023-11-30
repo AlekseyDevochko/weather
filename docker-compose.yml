@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.2.0
+    restart: always
+    container_name: db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~apps/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: weathertemp
+      MYSQL_USER: gnom
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: secret
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-app
+    image: weather:0.0.1
+    ports:
+      - 8181:8181
+#    network_mode: host
+#    networks:
+#      - weather-network
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/weathertemp
+      - SPRING_DATASOURCE_USERNAME=gnom
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+
+
+#volumes:
+#  weather:

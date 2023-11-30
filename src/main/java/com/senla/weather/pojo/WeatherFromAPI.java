@@ -9,7 +9,6 @@ import jakarta.annotation.Generated;
 
 import javax.validation.Valid;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "location",

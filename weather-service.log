@@ -1602,3 +1602,368 @@ java.lang.RuntimeException: LOX
 2023-11-30T15:45:55.840+03:00  INFO 23608 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-30T15:45:56.067+03:00  INFO 23608 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-11-30T15:45:56.085+03:00  INFO 23608 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:13:07.497+03:00  INFO 23568 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 23568 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:13:07.505+03:00  INFO 23568 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:13:08.176+03:00  INFO 23568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:13:08.246+03:00  INFO 23568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2023-11-30T16:13:08.739+03:00  INFO 23568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:13:08.747+03:00  INFO 23568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:13:08.748+03:00  INFO 23568 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:13:08.805+03:00  INFO 23568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:13:08.805+03:00  INFO 23568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2023-11-30T16:13:08.939+03:00  INFO 23568 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:13:08.998+03:00  INFO 23568 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:13:09.029+03:00  INFO 23568 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:13:09.233+03:00  INFO 23568 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:13:09.258+03:00  INFO 23568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:13:09.408+03:00  INFO 23568 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b5312df
+2023-11-30T16:13:09.409+03:00  INFO 23568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:13:09.458+03:00  WARN 23568 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:13:10.133+03:00  INFO 23568 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:13:10.746+03:00  INFO 23568 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:13:10.963+03:00  INFO 23568 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:13:11.356+03:00  WARN 23568 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:13:11.639+03:00  INFO 23568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:13:11.648+03:00  INFO 23568 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.56 seconds (process running for 6.712)
+2023-11-30T16:14:03.048+03:00  INFO 23568 --- [task-1] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:14:03.143+03:00  INFO 23568 --- [task-1] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:14:03.408+03:00  INFO 23568 --- [task-1] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:15:01.258+03:00  INFO 23568 --- [task-2] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:15:01.261+03:00  INFO 23568 --- [task-2] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:15:01.290+03:00  INFO 23568 --- [task-2] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:16:01.278+03:00  INFO 23568 --- [task-3] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:16:01.282+03:00  INFO 23568 --- [task-3] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:16:01.393+03:00  INFO 23568 --- [task-3] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:16:44.130+03:00  INFO 23568 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:16:45.565+03:00  INFO 23568 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:16:45.572+03:00  INFO 23568 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:16:50.329+03:00  INFO 18056 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 18056 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:16:50.332+03:00  INFO 18056 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:16:51.233+03:00  INFO 18056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:16:51.279+03:00  INFO 18056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2023-11-30T16:16:51.760+03:00  INFO 18056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:16:51.769+03:00  INFO 18056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:16:51.770+03:00  INFO 18056 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:16:51.837+03:00  INFO 18056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:16:51.838+03:00  INFO 18056 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1462 ms
+2023-11-30T16:16:51.980+03:00  INFO 18056 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:16:52.050+03:00  INFO 18056 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:16:52.089+03:00  INFO 18056 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:16:52.319+03:00  INFO 18056 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:16:52.344+03:00  INFO 18056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:16:52.479+03:00  INFO 18056 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2565a7d0
+2023-11-30T16:16:52.481+03:00  INFO 18056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:16:52.533+03:00  WARN 18056 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:16:53.322+03:00  INFO 18056 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:16:53.959+03:00  INFO 18056 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:16:54.159+03:00  INFO 18056 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:16:54.542+03:00  WARN 18056 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:16:55.497+03:00  INFO 18056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:16:55.506+03:00  INFO 18056 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 5.599 seconds (process running for 6.484)
+2023-11-30T16:17:00.690+03:00  INFO 18056 --- [task-1] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:17:00.757+03:00  INFO 18056 --- [task-1] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:17:01.213+03:00  INFO 18056 --- [task-1] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:17:10.333+03:00  INFO 18056 --- [task-2] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:17:10.336+03:00  INFO 18056 --- [task-2] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:17:10.361+03:00  INFO 18056 --- [task-2] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:17:19.663+03:00  INFO 18056 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:17:19.968+03:00  INFO 18056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:17:19.972+03:00  INFO 18056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:20:00.530+03:00  INFO 19908 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 19908 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:20:00.532+03:00  INFO 19908 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:20:01.104+03:00  INFO 19908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:20:01.150+03:00  INFO 19908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2023-11-30T16:20:01.612+03:00  INFO 19908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:20:01.621+03:00  INFO 19908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:20:01.621+03:00  INFO 19908 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:20:01.675+03:00  INFO 19908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:20:01.676+03:00  INFO 19908 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1100 ms
+2023-11-30T16:20:01.808+03:00  INFO 19908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:20:01.862+03:00  INFO 19908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:20:01.898+03:00  INFO 19908 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:20:02.099+03:00  INFO 19908 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:20:02.121+03:00  INFO 19908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:20:02.255+03:00  INFO 19908 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ce88c4
+2023-11-30T16:20:02.258+03:00  INFO 19908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:20:02.301+03:00  WARN 19908 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:20:03.013+03:00  INFO 19908 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:20:04.854+03:00  INFO 19908 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:20:05.037+03:00  INFO 19908 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:20:05.413+03:00  WARN 19908 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:20:05.696+03:00  INFO 19908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:20:05.705+03:00  INFO 19908 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 5.587 seconds (process running for 6.28)
+2023-11-30T16:20:28.389+03:00  INFO 19908 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:20:28.683+03:00  INFO 19908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:20:28.689+03:00  INFO 19908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:20:52.303+03:00  INFO 16176 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 16176 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:20:52.305+03:00  INFO 16176 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:20:52.871+03:00  INFO 16176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:20:52.919+03:00  INFO 16176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2023-11-30T16:20:53.374+03:00  INFO 16176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:20:53.382+03:00  INFO 16176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:20:53.382+03:00  INFO 16176 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:20:53.437+03:00  INFO 16176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:20:53.437+03:00  INFO 16176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1090 ms
+2023-11-30T16:20:53.572+03:00  INFO 16176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:20:53.627+03:00  INFO 16176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:20:53.658+03:00  INFO 16176 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:20:53.857+03:00  INFO 16176 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:20:53.878+03:00  INFO 16176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:20:54.009+03:00  INFO 16176 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e77678c
+2023-11-30T16:20:54.011+03:00  INFO 16176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:20:54.052+03:00  WARN 16176 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:20:54.736+03:00  INFO 16176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:20:55.283+03:00  INFO 16176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:20:55.480+03:00  INFO 16176 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:20:55.861+03:00  WARN 16176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:20:56.148+03:00  INFO 16176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:20:56.157+03:00  INFO 16176 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.251 seconds (process running for 4.836)
+2023-11-30T16:21:00.248+03:00 ERROR 16176 --- [task-1] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI() throws java.util.concurrent.ExecutionException,java.lang.InterruptedException,java.io.IOException
+
+java.lang.IllegalArgumentException: ${api-url} could not be parsed into a proper Uri, missing scheme
+	at org.asynchttpclient.uri.Uri.create(Uri.java:67) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.uri.Uri.create(Uri.java:59) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.RequestBuilderBase.setUrl(RequestBuilderBase.java:147) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.requestBuilder(DefaultAsyncHttpClient.java:285) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.prepareGet(DefaultAsyncHttpClient.java:129) ~[async-http-client-2.2.0.jar:na]
+	at com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI(ScheduleServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-6.1.1.jar:6.1.1]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-30T16:21:05.022+03:00 ERROR 16176 --- [task-2] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI() throws java.util.concurrent.ExecutionException,java.lang.InterruptedException,java.io.IOException
+
+java.lang.IllegalArgumentException: ${api-url} could not be parsed into a proper Uri, missing scheme
+	at org.asynchttpclient.uri.Uri.create(Uri.java:67) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.uri.Uri.create(Uri.java:59) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.RequestBuilderBase.setUrl(RequestBuilderBase.java:147) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.requestBuilder(DefaultAsyncHttpClient.java:285) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.prepareGet(DefaultAsyncHttpClient.java:129) ~[async-http-client-2.2.0.jar:na]
+	at com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI(ScheduleServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-6.1.1.jar:6.1.1]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-30T16:21:09.867+03:00  INFO 16176 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:21:10.160+03:00  INFO 16176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:21:10.166+03:00  INFO 16176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:21:31.677+03:00  INFO 23188 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 23188 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:21:31.679+03:00  INFO 23188 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:21:32.330+03:00  INFO 23188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:21:32.383+03:00  INFO 23188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2023-11-30T16:21:32.885+03:00  INFO 23188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:21:32.895+03:00  INFO 23188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:21:32.895+03:00  INFO 23188 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:21:32.954+03:00  INFO 23188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:21:32.955+03:00  INFO 23188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1226 ms
+2023-11-30T16:21:33.094+03:00  INFO 23188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:21:33.155+03:00  INFO 23188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:21:33.187+03:00  INFO 23188 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:21:33.399+03:00  INFO 23188 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:21:33.422+03:00  INFO 23188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:21:33.565+03:00  INFO 23188 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2565a7d0
+2023-11-30T16:21:33.567+03:00  INFO 23188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:21:33.612+03:00  WARN 23188 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:21:34.367+03:00  INFO 23188 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:21:34.874+03:00  INFO 23188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:21:35.076+03:00  INFO 23188 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:21:35.471+03:00  WARN 23188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:21:35.764+03:00  INFO 23188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:21:35.773+03:00  INFO 23188 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.6 seconds (process running for 5.567)
+2023-11-30T16:21:40.232+03:00 ERROR 23188 --- [task-1] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI() throws java.util.concurrent.ExecutionException,java.lang.InterruptedException,java.io.IOException
+
+java.lang.IllegalArgumentException: ${api-url} could not be parsed into a proper Uri, missing scheme
+	at org.asynchttpclient.uri.Uri.create(Uri.java:67) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.uri.Uri.create(Uri.java:59) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.RequestBuilderBase.setUrl(RequestBuilderBase.java:147) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.requestBuilder(DefaultAsyncHttpClient.java:285) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.prepareGet(DefaultAsyncHttpClient.java:129) ~[async-http-client-2.2.0.jar:na]
+	at com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI(ScheduleServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-6.1.1.jar:6.1.1]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-30T16:21:42.691+03:00  INFO 23188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:21:43.494+03:00  INFO 23188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:21:43.499+03:00  INFO 23188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:23:13.572+03:00  INFO 22952 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 22952 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:23:13.574+03:00  INFO 22952 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:23:14.131+03:00  INFO 22952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:23:14.177+03:00  INFO 22952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2023-11-30T16:23:14.647+03:00  INFO 22952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:23:14.655+03:00  INFO 22952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:23:14.656+03:00  INFO 22952 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:23:14.711+03:00  INFO 22952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:23:14.711+03:00  INFO 22952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1089 ms
+2023-11-30T16:23:14.836+03:00  INFO 22952 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:23:14.888+03:00  INFO 22952 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:23:14.922+03:00  INFO 22952 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:23:15.122+03:00  INFO 22952 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:23:15.144+03:00  INFO 22952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:23:15.275+03:00  INFO 22952 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9d99851
+2023-11-30T16:23:15.276+03:00  INFO 22952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:23:15.320+03:00  WARN 22952 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:23:16.012+03:00  INFO 22952 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:23:16.471+03:00  INFO 22952 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:23:16.664+03:00  INFO 22952 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:23:17.049+03:00  WARN 22952 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:23:17.332+03:00  INFO 22952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:23:17.341+03:00  INFO 22952 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.188 seconds (process running for 4.817)
+2023-11-30T16:23:20.238+03:00 ERROR 22952 --- [task-1] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI() throws java.util.concurrent.ExecutionException,java.lang.InterruptedException,java.io.IOException
+
+java.lang.IllegalArgumentException: "https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk" could not be parsed into a proper Uri, missing scheme
+	at org.asynchttpclient.uri.Uri.create(Uri.java:67) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.uri.Uri.create(Uri.java:59) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.RequestBuilderBase.setUrl(RequestBuilderBase.java:147) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.requestBuilder(DefaultAsyncHttpClient.java:285) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.prepareGet(DefaultAsyncHttpClient.java:129) ~[async-http-client-2.2.0.jar:na]
+	at com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI(ScheduleServiceImpl.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-6.1.1.jar:6.1.1]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-30T16:23:25.023+03:00 ERROR 22952 --- [task-2] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI() throws java.util.concurrent.ExecutionException,java.lang.InterruptedException,java.io.IOException
+
+java.lang.IllegalArgumentException: "https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk" could not be parsed into a proper Uri, missing scheme
+	at org.asynchttpclient.uri.Uri.create(Uri.java:67) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.uri.Uri.create(Uri.java:59) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.RequestBuilderBase.setUrl(RequestBuilderBase.java:147) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.requestBuilder(DefaultAsyncHttpClient.java:285) ~[async-http-client-2.2.0.jar:na]
+	at org.asynchttpclient.DefaultAsyncHttpClient.prepareGet(DefaultAsyncHttpClient.java:129) ~[async-http-client-2.2.0.jar:na]
+	at com.senla.weather.service.impl.ScheduleServiceImpl.getWeatherFromAPI(ScheduleServiceImpl.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-6.1.1.jar:6.1.1]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-30T16:23:26.642+03:00  INFO 22952 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:23:26.940+03:00  INFO 22952 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:23:26.948+03:00  INFO 22952 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:23:36.719+03:00  INFO 4268 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 4268 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:23:36.722+03:00  INFO 4268 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:23:37.296+03:00  INFO 4268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:23:37.343+03:00  INFO 4268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2023-11-30T16:23:37.810+03:00  INFO 4268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:23:37.819+03:00  INFO 4268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:23:37.819+03:00  INFO 4268 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:23:37.877+03:00  INFO 4268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:23:37.877+03:00  INFO 4268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1103 ms
+2023-11-30T16:23:38.008+03:00  INFO 4268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:23:38.058+03:00  INFO 4268 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:23:38.089+03:00  INFO 4268 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:23:38.281+03:00  INFO 4268 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:23:38.302+03:00  INFO 4268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:23:38.434+03:00  INFO 4268 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fd7b79
+2023-11-30T16:23:38.435+03:00  INFO 4268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:23:38.479+03:00  WARN 4268 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:23:39.172+03:00  INFO 4268 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:23:39.712+03:00  INFO 4268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:23:39.921+03:00  INFO 4268 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:23:40.313+03:00  WARN 4268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:23:40.608+03:00  INFO 4268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:23:40.619+03:00  INFO 4268 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.299 seconds (process running for 4.911)
+2023-11-30T16:23:45.929+03:00  INFO 4268 --- [task-1] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:23:45.991+03:00  INFO 4268 --- [task-1] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:23:46.018+03:00  INFO 4268 --- [task-1] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:23:48.475+03:00  INFO 4268 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:23:48.779+03:00  INFO 4268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:23:48.784+03:00  INFO 4268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-30T16:26:59.260+03:00  INFO 5276 --- [main] com.senla.weather.WeatherApplication     : Starting WeatherApplication using Java 18.0.2.1 with PID 5276 (D:\Downloads\weather\target\classes started by Lexa in D:\Downloads\weather)
+2023-11-30T16:26:59.262+03:00  INFO 5276 --- [main] com.senla.weather.WeatherApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-11-30T16:26:59.834+03:00  INFO 5276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-30T16:26:59.883+03:00  INFO 5276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2023-11-30T16:27:00.340+03:00  INFO 5276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-11-30T16:27:00.348+03:00  INFO 5276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-30T16:27:00.349+03:00  INFO 5276 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-11-30T16:27:00.429+03:00  INFO 5276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-30T16:27:00.429+03:00  INFO 5276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
+2023-11-30T16:27:00.556+03:00  INFO 5276 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-30T16:27:00.605+03:00  INFO 5276 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-11-30T16:27:00.634+03:00  INFO 5276 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-11-30T16:27:00.832+03:00  INFO 5276 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-30T16:27:00.854+03:00  INFO 5276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-30T16:27:00.992+03:00  INFO 5276 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e77678c
+2023-11-30T16:27:00.994+03:00  INFO 5276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-30T16:27:01.039+03:00  WARN 5276 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-11-30T16:27:01.716+03:00  INFO 5276 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-30T16:27:02.239+03:00  INFO 5276 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:27:02.440+03:00  INFO 5276 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-30T16:27:02.831+03:00  WARN 5276 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-30T16:27:03.115+03:00  INFO 5276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-11-30T16:27:03.125+03:00  INFO 5276 --- [main] com.senla.weather.WeatherApplication     : Started WeatherApplication in 4.267 seconds (process running for 4.861)
+2023-11-30T16:27:05.761+03:00  INFO 5276 --- [task-1] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:05.823+03:00  INFO 5276 --- [task-1] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:05.851+03:00  INFO 5276 --- [task-1] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:10.205+03:00  INFO 5276 --- [task-2] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:10.208+03:00  INFO 5276 --- [task-2] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:10.316+03:00  INFO 5276 --- [task-2] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:15.228+03:00  INFO 5276 --- [task-3] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:15.231+03:00  INFO 5276 --- [task-3] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:15.337+03:00  INFO 5276 --- [task-3] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:20.223+03:00  INFO 5276 --- [task-4] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:20.226+03:00  INFO 5276 --- [task-4] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:20.349+03:00  INFO 5276 --- [task-4] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:25.170+03:00  INFO 5276 --- [task-5] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:25.173+03:00  INFO 5276 --- [task-5] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:25.397+03:00  INFO 5276 --- [task-5] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:30.190+03:00  INFO 5276 --- [task-6] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:30.193+03:00  INFO 5276 --- [task-6] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:30.302+03:00  INFO 5276 --- [task-6] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:35.189+03:00  INFO 5276 --- [task-7] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:35.192+03:00  INFO 5276 --- [task-7] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:35.290+03:00  INFO 5276 --- [task-7] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:40.187+03:00  INFO 5276 --- [task-8] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:40.190+03:00  INFO 5276 --- [task-8] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:40.295+03:00  INFO 5276 --- [task-8] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:45.184+03:00  INFO 5276 --- [task-1] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:45.186+03:00  INFO 5276 --- [task-1] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:45.261+03:00  INFO 5276 --- [task-1] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:50.191+03:00  INFO 5276 --- [task-2] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:50.194+03:00  INFO 5276 --- [task-2] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:50.298+03:00  INFO 5276 --- [task-2] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:27:55.200+03:00  INFO 5276 --- [task-3] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:27:55.202+03:00  INFO 5276 --- [task-3] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:27:55.303+03:00  INFO 5276 --- [task-3] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:28:00.206+03:00  INFO 5276 --- [task-4] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:28:00.208+03:00  INFO 5276 --- [task-4] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:28:00.231+03:00  INFO 5276 --- [task-4] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:28:05.227+03:00  INFO 5276 --- [task-5] c.senla.weather.parser.impl.ParserImpl   : parse json to weatherFromAPI
+2023-11-30T16:28:05.229+03:00  INFO 5276 --- [task-5] c.s.w.service.impl.WeatherServiceImpl    : new weather created
+2023-11-30T16:28:05.268+03:00  INFO 5276 --- [task-5] c.s.w.service.impl.ScheduleServiceImpl   : weather from API have been added
+2023-11-30T16:28:08.681+03:00  INFO 5276 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-30T16:28:08.975+03:00  INFO 5276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-30T16:28:08.982+03:00  INFO 5276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

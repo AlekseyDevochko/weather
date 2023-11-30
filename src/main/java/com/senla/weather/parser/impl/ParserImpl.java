@@ -8,7 +8,6 @@ import com.senla.weather.pojo.WeatherFromAPI;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.asynchttpclient.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,14 +19,7 @@ public class ParserImpl implements Parser {
 
     @Override
     public WeatherFromAPI parse(Response response) throws JsonProcessingException {
-
-
-        WeatherFromAPI weatherFromAPI = null;
-
-
-        weatherFromAPI = objectMapper.readValue(response.getResponseBody(), WeatherFromAPI.class);
-
-
+        WeatherFromAPI weatherFromAPI = objectMapper.readValue(response.getResponseBody(), WeatherFromAPI.class);
         log.info("parse json to weatherFromAPI");
         return weatherFromAPI;
     }

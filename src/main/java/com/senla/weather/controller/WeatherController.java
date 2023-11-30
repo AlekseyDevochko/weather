@@ -24,7 +24,6 @@ public class WeatherController {
     @PostMapping("/average")
     public ResponseEntity<AverageWeatherResponse> getAverageWeatherData(@RequestBody @Valid RequestWeather requestWeather){
         List<Weather> weatherList = weatherService.getPeriodTimeWeather(requestWeather.getStartDate(), requestWeather.getEndDate());
-        //TODO: extract to weather service
         AverageWeatherResponse averageWeatherResponse = weatherService.getAverage(weatherList);
         return ResponseEntity.ok(averageWeatherResponse);
     }
