@@ -1,4 +1,4 @@
-package com.senla.weather.model;
+package com.senla.weather.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

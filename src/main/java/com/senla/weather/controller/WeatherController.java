@@ -1,43 +1,37 @@
 package com.senla.weather.controller;
 
-import com.senla.weather.model.Average;
-import com.senla.weather.model.RequestWeather;
+import com.senla.weather.response.WeatherResponse;
+import com.senla.weather.response.AverageWeatherResponse;
+import com.senla.weather.request.RequestWeather;
 import com.senla.weather.model.Weather;
-import com.senla.weather.service.AverageService;
 import com.senla.weather.service.WeatherService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@RequestMapping("/weather")
 @Slf4j
+@RequiredArgsConstructor
 public class WeatherController {
 
-    private WeatherService weatherService;
-    private AverageService averageService;
+    private final WeatherService weatherService;
 
-
-
-    @PostMapping("/get-list")
-    public Average getWeatherList(@RequestBody @Valid RequestWeather requestWeather){
-        List<Weather> weatherList = weatherService.getWeatherList(requestWeather.getStartDate(), requestWeather.getEndDate());
-        Average average = averageService.getAverage(weatherList);
-        return ResponseEntity.ok(average).getBody();
+    @PostMapping("/average")
+    public ResponseEntity<AverageWeatherResponse> getAverageWeatherData(@RequestBody @Valid RequestWeather requestWeather){
+        List<Weather> weatherList = weatherService.getPeriodTimeWeather(requestWeather.getStartDate(), requestWeather.getEndDate());
+        //TODO: extract to weather service
+        AverageWeatherResponse averageWeatherResponse = weatherService.getAverage(weatherList);
+        return ResponseEntity.ok(averageWeatherResponse);
     }
 
-    @Autowired
-    public void setWeatherService(WeatherService weatherService) {
-        this.weatherService = weatherService;
-    }
-
-    @Autowired
-    public void setAverageService(AverageService averageService) {
-        this.averageService = averageService;
+    @GetMapping("/current")
+    public ResponseEntity<WeatherResponse> getLatestWeatherData(){
+        WeatherResponse weatherResponse = weatherService.getLatestWeatherData();
+        return ResponseEntity.ok(weatherResponse);
     }
 }
