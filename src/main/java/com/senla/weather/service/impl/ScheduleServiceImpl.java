@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -37,7 +36,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Value("${api-host-value}")
     private String apiHostValue;
 
-    @Scheduled(cron = "*/5 * * * * *")
+    @Scheduled(cron = "${cron-value}")
     @Async
     public void getWeatherFromAPI() throws ExecutionException, InterruptedException, IOException {
         AsyncHttpClient client = new DefaultAsyncHttpClient();

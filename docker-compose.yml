@@ -13,9 +13,6 @@ services:
       MYSQL_USER: gnom
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: secret
-#    networks:
-#      - weather-network
-#    network_mode: "host"
 
   app:
     build:
@@ -25,9 +22,6 @@ services:
     image: weather:0.0.1
     ports:
       - 8080:8080
-#    network_mode: host
-#    networks:
-#      - weather-network
     depends_on:
       - db
     environment:
@@ -37,11 +31,3 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
       - SPRING_PROFILES_ACTIVE=dev
     command: mvn spring-boot:run -Dspring.profiles.active=dev
-#    networks:
-#      - weather-network
-#    network_mode: "host"
-#networks:
-#  weather-network:
-#    external: true
-#volumes:
-#  weather:
