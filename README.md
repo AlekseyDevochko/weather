@@ -201,13 +201,15 @@ json
 
 {
   "temperature": 25,
-  "wind_speed": 10,
+  "mph": 10,
   "pressure": 1012,
   "humidity": 70,
-  "weather_conditions": "солнечно",
-  "location": "Минск"
+  "weather_conditions": "Sunny",
+  "location": "Minsk"
 }
+
 Получение среднесуточной температуры за указанный период
+
 http://localhost:8080/weather/average
 
 Этот endpoint предоставляет информацию о среднесуточной температуре в Минске за указанный период.
@@ -222,14 +224,17 @@ endDate (обязательный) - конечная дата в формате
 Пример запроса:
 
 
-POST /average_temperature?from=22-08-2021&to=24-08-2021
+POST http://localhost:8080/weather/average?from=22-11-2023&to=30-11-2023
 Ответ
 Пример ответа:
 
 
 {
-  "average_temp": 10,
-  // и другие данные
+   "averageTemperature"=-5,
+   "averageMph"=23.4,
+   "averagePressure"=880,
+   "averageHumidity"=65,
+   "averageWeatherCondition"="Cloudy"
 }
 ## Сопроводительная информация
 
@@ -243,9 +248,9 @@ POST /average_temperature?from=22-08-2021&to=24-08-2021
 http://localhost:8080/weather/current
 
 Получение среднесуточной температуры за указанный период:
-http://localhost:8080/weather/average
 
-POST /average_temperature?from=22-08-2021&to=24-08-2021
+
+POST / http://localhost:8080/weather/average?from=22-10-2023&to=30-11-2023
 
 Примечание: Убедитесь, что ваше приложение запущено и имеет доступ к интернету и базе данных перед отправкой запросов.
 
