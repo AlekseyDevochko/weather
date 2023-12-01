@@ -15,6 +15,12 @@ import java.util.stream.Collectors;
 @Slf4j
 public class WeatherUtil {
 
+    /**
+     * Converts a Weather object to a WeatherResponse object (DTO).
+     *
+     * @param weather the Weather object to be converted
+     * @return a WeatherResponse object representing the converted Weather data
+     */
     public static WeatherResponse toDTO(Weather weather){
         WeatherResponse weatherResponse = new WeatherResponse();
         weatherResponse.setTemperature(weather.getTemperature());
@@ -29,6 +35,13 @@ public class WeatherUtil {
         return weatherResponse;
     }
 
+    /**
+     * Retrieves the most common weather condition from a list of weather conditions.
+     *
+     * @param weatherConditionList the list of weather conditions
+     * @return the most common weather condition as a string
+     * @throws RuntimeException if the most common weather condition cannot be determined
+     */
     public static String getMostCommonWeatherCondition(List<String> weatherConditionList){
         Map<String, Long> map= weatherConditionList.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -39,6 +52,12 @@ public class WeatherUtil {
         return mostCommon.orElseThrow(() -> new RuntimeException("cant get most common weather condition"));
     }
 
+    /**
+     * Calculates the average value of a list of integers.
+     *
+     * @param list the list of integers
+     * @return the average value as an integer
+     */
     public static int getAverageInteger(List<Integer> list) {
         log.info("average value has been calculated");
         return (int) list.stream()
@@ -46,6 +65,12 @@ public class WeatherUtil {
                 .average().orElse(0);
     }
 
+    /**
+     * Calculates the average value of a list of doubles.
+     *
+     * @param list the list of doubles
+     * @return the average value as a double
+     */
     public static double getAverageDouble(List<Double> list) {
         log.info("average value has been calculated");
         return list.stream()

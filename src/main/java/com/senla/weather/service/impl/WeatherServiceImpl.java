@@ -22,6 +22,12 @@ public class WeatherServiceImpl implements WeatherService {
 
     public static final int SECONDS_MULTIPLIER = 1000;
     private final WeatherRepository weatherRepository;
+
+    /**
+     * Creates a new weather entry based on the data from WeatherFromAPI.
+     *
+     * @param weatherFromAPI the WeatherFromAPI object containing the weather data
+     */
     @Transactional
     @Override
     public void create(WeatherFromAPI weatherFromAPI) {
@@ -37,6 +43,13 @@ public class WeatherServiceImpl implements WeatherService {
         log.info("new weather created");
     }
 
+    /**
+     * Retrieves the weather data for a specified period of time.
+     *
+     * @param startDate the start date of the period
+     * @param endDate the end date of the period
+     * @return a list of Weather objects representing the weather data within the specified period
+     */
     @Override
     public List<Weather> getPeriodTimeWeather(Date startDate, Date endDate) {
         List<Weather> weatherList = weatherRepository.getWeatherFromStartToEnd(startDate, endDate);
@@ -44,6 +57,11 @@ public class WeatherServiceImpl implements WeatherService {
         return weatherList;
     }
 
+    /**
+     * Method to retrieve the latest weather data.
+     *
+     * @return a WeatherResponse object containing the latest weather data
+     */
     @Override
     public WeatherResponse getLatestWeatherData() {
         Weather weather = weatherRepository.getLatestCreatedWeatherData();
@@ -51,6 +69,13 @@ public class WeatherServiceImpl implements WeatherService {
         return WeatherUtil.toDTO(weather);
     }
 
+
+    /**
+     * Method to calculate the average weather based on a list of weather data.
+     *
+     * @param weatherList the list of Weather objects containing weather data
+     * @return an AverageWeatherResponse object with the average weather data
+     */
     @Override
     public AverageWeatherResponse getAverage(List<Weather> weatherList) {
         AverageWeatherResponse averageWeatherResponse = new AverageWeatherResponse();
