@@ -217,15 +217,20 @@ http://localhost:8080/weather/average
 Запрос
 HTTP метод: POST
 
-URL параметры:
+Json параметры:
 
-startDate (обязательный) - начальная дата в формате "дд-мм-гггг"
-endDate (обязательный) - конечная дата в формате "дд-мм-гггг"
+startDate (обязательный) - начальная дата в формате "гггг-мм-дд"
+endDate (обязательный) - конечная дата в формате "гггг-мм-дд"
 Пример запроса:
 
 
-POST http://localhost:8080/weather/average?from=22-11-2023&to=30-11-2023
-Ответ
+POST http://localhost:8080/weather/average
+
+{
+"startDate": "22-11-2023", 
+"endDate": "30-11-2023" 
+} 
+
 Пример ответа:
 
 
@@ -234,7 +239,7 @@ POST http://localhost:8080/weather/average?from=22-11-2023&to=30-11-2023
    "averageMph"=23.4,
    "averagePressure"=880,
    "averageHumidity"=65,
-   "averageWeatherCondition"="Cloudy"
+ "averageWeatherCondition"="Cloudy"
 }
 ## Сопроводительная информация
 
@@ -250,13 +255,15 @@ http://localhost:8080/weather/current
 Получение среднесуточной температуры за указанный период:
 
 
-POST / http://localhost:8080/weather/average?from=22-10-2023&to=30-11-2023
+POST / http://localhost:8080/weather/average
+
+{
+"startDate": "22-11-2023", 
+"endDate": "30-11-2023" 
+} 
 
 Примечание: Убедитесь, что ваше приложение запущено и имеет доступ к интернету и базе данных перед отправкой запросов.
 
-## Вклад
-
-Если разработка проекта открыта для вклада от других разработчиков, укажите инструкции по вкладу и взаимодействию с сообществом.
 
 ## Авторы
 
